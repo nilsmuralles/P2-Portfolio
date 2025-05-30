@@ -8,4 +8,9 @@ export default defineConfig({
     host: '0.0.0.0',
   },
   plugins: [react()],
+  resolve: {
+    alias: {
+      '@components': new URL('./src/components', import.meta.url).pathname,
+    }
+  }
 })
