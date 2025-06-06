@@ -1,9 +1,10 @@
+import Terminal from '@components/Terminal'
 import styles from './Layout.module.css'
 
 const Layout = () => {
   return (
-    <main>
-
+    <main className={styles.layout}>
+      <Terminal />
     </main>
   )
 }
