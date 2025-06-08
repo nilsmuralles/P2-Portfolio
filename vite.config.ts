@@ -12,6 +12,7 @@ export default defineConfig({
     alias: {
       '@components': new URL('./src/components', import.meta.url).pathname,
       '@hooks': new URL('./src/hooks', import.meta.url).pathname,
+      '@interfaces': new URL('./src/interfaces', import.meta.url).pathname,
     }
   }
 })
