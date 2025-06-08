@@ -15,6 +15,8 @@ const CustomTerminal = ({className, onTerminalInit}: TerminalProps) => {
   useEffect(() => {
     if (instance) {
       instance.options = {
+        fontSize: 16,
+        fontFamily: '"Hack Nerd Font", monospace',
         cursorBlink: true,
         theme: {
           background: 'rgba(0, 0, 0, 0)',
