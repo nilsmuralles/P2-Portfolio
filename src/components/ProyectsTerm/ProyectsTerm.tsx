@@ -25,7 +25,6 @@ const ProyectsTerm = ({className, selectedProyect, setSelectedProject}: Proyects
 
   const handleTermInit = (term: Terminal) => {
     if (!term) return
-
     term.focus()
     renderList(term)
 

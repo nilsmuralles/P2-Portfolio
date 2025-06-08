@@ -21,7 +21,6 @@ const PreviewTerm = ({className, selectedProject}: PreviewTermProps) => {
   useEffect(() => {
     if (termRef.current) {
       termRef.current.clear()
-      showPreview(termRef.current)
     }
   }, [selectedProject, showPreview])
 
