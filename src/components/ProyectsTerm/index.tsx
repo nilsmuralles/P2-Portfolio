@@ -1,2 +1,2 @@
-import ProyectsTerm from "./ProyectsTerm";
+import ProyectsTerm from "./ProyectsTerm"
 export default ProyectsTerm
