@@ -32,7 +32,7 @@ const Terminal = ({className}: TerminalProps) => {
         boxShadow: '0px 1px 6px 0px rgba(0,0,0,0.75)',
         WebkitBoxShadow: '0px 1px 6px 0px rgba(0,0,0,0.75)',
         MozBoxShadow: '0px 1px 6px 0px rgba(0,0,0,0.75)',
-        backdropFilter: 'blur(8px)'
+        backdropFilter: 'blur(8px)',
       }}
       addons={[fitAddon]}
     />
