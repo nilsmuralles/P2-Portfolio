@@ -1,2 +1,2 @@
-import Terminal from "./Terminal"
-export default Terminal
+import CustomTerminal from "./Terminal"
+export default CustomTerminal

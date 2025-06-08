@@ -1,30 +1,41 @@
-import { XTerm } from "react-xtermjs"
+import { useXTerm } from "react-xtermjs"
 import { FitAddon } from "@xterm/addon-fit";
 import { useEffect } from "react";
+import type { Terminal } from "@xterm/xterm";
 
 interface TerminalProps {
   className?: string
+  onTerminalInit?: (terminal: Terminal) => void
 }
 
-const Terminal = ({className}: TerminalProps) => {
+const CustomTerminal = ({className, onTerminalInit}: TerminalProps) => {
+  const { instance, ref } = useXTerm()
   const fitAddon = new FitAddon()
-  useEffect(() => {
-    if (fitAddon) {
-      setTimeout(() => fitAddon.fit(), 0)
-    }
-  }, [fitAddon])
 
-  return (
-    <XTerm
-      className={className}
-      options={{ 
-        cursorBlink: true, 
+  useEffect(() => {
+    if (instance) {
+      instance.options = {
+        cursorBlink: true,
         theme: {
           background: 'rgba(0, 0, 0, 0)',
           foreground: '#ffffff'
         }
-      }}
-      style={{ 
+      }
+    }
+    if (fitAddon) {
+      setTimeout(() => fitAddon.fit(), 0)
+      instance?.loadAddon(fitAddon)
+    }
+    if (onTerminalInit && instance) {
+      onTerminalInit(instance)
+    }
+  }, [fitAddon])
+
+  return (
+    <div 
+      className={className}
+      ref={ref}
+      style={{
         width: '100%', 
         height: '100%',
         borderRadius: '8px',
@@ -34,9 +45,8 @@ const Terminal = ({className}: TerminalProps) => {
         MozBoxShadow: '0px 1px 6px 0px rgba(0,0,0,0.75)',
         backdropFilter: 'blur(8px)',
       }}
-      addons={[fitAddon]}
     />
   )
 }
 
-export default Terminal
+export default CustomTerminal

@@ -14,7 +14,10 @@ html, body {
 
 body {
   line-height: 1.5;
-  background-color: yellow;
+  background-image: url('/public/images/wallpaper.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   -webkit-font-smoothing: antialiased;
 }
 
