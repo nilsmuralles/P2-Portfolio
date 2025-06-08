@@ -28,11 +28,10 @@ const CustomTerminal = ({ className, onTerminalInit }: TerminalProps) => {
     if (!fitAddonRef.current) {
       fitAddonRef.current = new FitAddon()
       instance.loadAddon(fitAddonRef.current)
+      setTimeout(() => {
+        fitAddonRef.current?.fit()
+      }, 0)
     }
-
-    setTimeout(() => {
-      fitAddonRef.current?.fit()
-    }, 0)
 
     if (onTerminalInit) {
       onTerminalInit(instance)
@@ -47,6 +46,7 @@ const CustomTerminal = ({ className, onTerminalInit }: TerminalProps) => {
         width: '100%',
         height: '100%',
         borderRadius: '8px',
+        padding: '8px',
         backgroundColor: 'rgba(0, 0, 0, 0.5)',
         boxShadow: '0px 1px 6px 0px rgba(0,0,0,0.75)',
         WebkitBoxShadow: '0px 1px 6px 0px rgba(0,0,0,0.75)',

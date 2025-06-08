@@ -3,13 +3,14 @@ import styles from './Layout.module.css'
 import ProyectsTerm from '@components/ProyectsTerm'
 import PreviewTerm from '@components/PreviewTerm'
 import { useState } from 'react'
+import NameTerm from '@components/NameTerm'
 
 const Layout = () => {
   const [selectedProyect, setSelectedProyect] = useState(0)
 
   return (
     <main className={styles.layout}>
-      <CustomTerminal className={styles.term1}/>
+      <NameTerm className={styles.term1}/>
       <CustomTerminal className={styles.term2}/>
       <CustomTerminal className={styles.term3}/>
       <ProyectsTerm 
