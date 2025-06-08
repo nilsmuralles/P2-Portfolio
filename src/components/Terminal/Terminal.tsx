@@ -1,6 +1,6 @@
 import { useXTerm } from "react-xtermjs"
 import { FitAddon } from "@xterm/addon-fit";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import type { Terminal } from "@xterm/xterm";
 
 interface TerminalProps {
@@ -8,39 +8,43 @@ interface TerminalProps {
   onTerminalInit?: (terminal: Terminal) => void
 }
 
-const CustomTerminal = ({className, onTerminalInit}: TerminalProps) => {
+const CustomTerminal = ({ className, onTerminalInit }: TerminalProps) => {
   const { instance, ref } = useXTerm()
-  const fitAddon = new FitAddon()
+  const fitAddonRef = useRef<FitAddon | null>(null)
 
   useEffect(() => {
-    if (instance) {
-      instance.options = {
-        fontSize: 16,
-        fontFamily: '"Hack Nerd Font", monospace',
-        cursorBlink: true,
-        theme: {
-          background: 'rgba(0, 0, 0, 0)',
-          foreground: '#ffffff'
-        }
+    if (!instance) return
+
+    instance.options = {
+      fontSize: 16,
+      fontFamily: '"Hack Nerd Font", monospace',
+      cursorBlink: true,
+      theme: {
+        background: 'rgba(0, 0, 0, 0)',
+        foreground: '#ffffff'
       }
     }
 
-    if (fitAddon) {
-      setTimeout(() => fitAddon.fit(), 0)
-      instance?.loadAddon(fitAddon)
+    if (!fitAddonRef.current) {
+      fitAddonRef.current = new FitAddon()
+      instance.loadAddon(fitAddonRef.current)
     }
 
-    if (onTerminalInit && instance) {
+    setTimeout(() => {
+      fitAddonRef.current?.fit()
+    }, 0)
+
+    if (onTerminalInit) {
       onTerminalInit(instance)
     }
-  }, [fitAddon])
+  }, [instance, onTerminalInit])
 
   return (
-    <div 
+    <div
       className={className}
       ref={ref}
       style={{
-        width: '100%', 
+        width: '100%',
         height: '100%',
         borderRadius: '8px',
         backgroundColor: 'rgba(0, 0, 0, 0.5)',
