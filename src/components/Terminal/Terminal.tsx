@@ -22,10 +22,12 @@ const CustomTerminal = ({className, onTerminalInit}: TerminalProps) => {
         }
       }
     }
+
     if (fitAddon) {
       setTimeout(() => fitAddon.fit(), 0)
       instance?.loadAddon(fitAddon)
     }
+
     if (onTerminalInit && instance) {
       onTerminalInit(instance)
     }

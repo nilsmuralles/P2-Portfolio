@@ -1,5 +1,6 @@
 import CustomTerminal from '@components/Terminal'
 import styles from './Layout.module.css'
+import ProyectsTerm from '@components/ProyectsTerm'
 
 const Layout = () => {
   return (
@@ -7,7 +8,7 @@ const Layout = () => {
       <CustomTerminal className={styles.term1}/>
       <CustomTerminal className={styles.term2}/>
       <CustomTerminal className={styles.term3}/>
-      <CustomTerminal className={styles.term4}/>
+      <ProyectsTerm className={styles.term4}/>
       <CustomTerminal className={styles.term5}/>
       <CustomTerminal className={styles.term6}/>
     </main>
