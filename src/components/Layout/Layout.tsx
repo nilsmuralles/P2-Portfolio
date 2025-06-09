@@ -6,6 +6,7 @@ import { useState } from 'react'
 import NameTerm from '@components/NameTerm'
 import AboutMeTerm from '@components/AboutMeTerm'
 import NeovimTerm from '@components/NeovimTerm'
+import ContactMeTerm from '@components/ContactMeTerm'
 
 const Layout = () => {
   const [selectedProyect, setSelectedProyect] = useState(0)
@@ -14,7 +15,7 @@ const Layout = () => {
     <main className={styles.layout}>
       <NameTerm className={styles.term1}/>
       <AboutMeTerm className={styles.term2}/>
-      <CustomTerminal className={styles.term3}/>
+      <ContactMeTerm className={styles.term3}/>
       <ProyectsTerm 
         className={styles.term4} 
         setSelectedProject={setSelectedProyect} 

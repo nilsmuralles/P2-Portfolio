@@ -3,6 +3,7 @@ import { FitAddon } from "@xterm/addon-fit";
 import { useEffect, useRef } from "react";
 import type { Terminal } from "@xterm/xterm";
 import { WebLinksAddon } from "@xterm/addon-web-links";
+import { Unicode11Addon } from "@xterm/addon-unicode11";
 
 interface TerminalProps {
   className?: string
