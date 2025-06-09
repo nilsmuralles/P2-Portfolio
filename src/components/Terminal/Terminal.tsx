@@ -6,9 +6,10 @@ import type { Terminal } from "@xterm/xterm";
 interface TerminalProps {
   className?: string
   onTerminalInit?: (terminal: Terminal) => void
+  children?: React.ReactNode
 }
 
-const CustomTerminal = ({ className, onTerminalInit }: TerminalProps) => {
+const CustomTerminal = ({ className, onTerminalInit, children }: TerminalProps) => {
   const { instance, ref } = useXTerm()
   const fitAddonRef = useRef<FitAddon | null>(null)
 
@@ -53,7 +54,9 @@ const CustomTerminal = ({ className, onTerminalInit }: TerminalProps) => {
         MozBoxShadow: '0px 1px 6px 0px rgba(0,0,0,0.75)',
         backdropFilter: 'blur(8px)',
       }}
-    />
+    >
+      {children}
+    </div>
   )
 }
 

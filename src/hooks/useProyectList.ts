@@ -3,12 +3,12 @@ import type { Terminal } from "@xterm/xterm"
 
 const useProyectList = (selectedIndex: number) => {
   const projects: Project[] = [
-    { id: 0, title: 'React Calculator', description: 'This is just temporary description' },
-    { id: 1, title: 'Go REST API', description: 'This is just temporary description' },
-    { id: 2, title: 'Physics Simulation with C', description: 'This is just temporary description' },
-    { id: 3, title: 'De Aquí Para Allá', description: 'This is just temporary description' },
+    { id: 0, title: 'React Calculator', description: 'This is just temporary description', imageURL: '/images/calculator_image.png' },
+    { id: 1, title: 'Go REST API', description: 'This is just temporary description', imageURL: '/images/goapi.png' },
+    { id: 2, title: 'ASCII Art Pac-Man', description: 'This is just temporary description', imageURL: 'images/ascii-pacman.png' },
+    { id: 3, title: 'De Aquí Para Allá', description: 'This is just temporary description', imageURL: 'images/dapa.png' },
   ]
-  const selectedProject = projects[selectedIndex]
+  const selected = projects[selectedIndex]
 
   const renderList = (term: Terminal) => {
     term.clear()
@@ -28,14 +28,14 @@ const useProyectList = (selectedIndex: number) => {
   const showPreview = (term: Terminal) => {
     term.clear()
 
-    term.writeln("\x1b[1m" + selectedProject.title + "\x1b[0m")
+    term.writeln("\x1b[1m" + selected.title + "\x1b[0m")
     term.writeln("")
-    term.writeln(selectedProject.description)
+    term.writeln(selected.description)
 
     term.blur()
   }
 
-  return { projects, renderList, showPreview, selectedIndex }
+  return { projects, renderList, showPreview, selectedIndex, selected }
 }
 
 export default useProyectList
