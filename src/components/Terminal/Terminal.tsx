@@ -2,6 +2,7 @@ import { useXTerm } from "react-xtermjs"
 import { FitAddon } from "@xterm/addon-fit";
 import { useEffect, useRef } from "react";
 import type { Terminal } from "@xterm/xterm";
+import { WebLinksAddon } from "@xterm/addon-web-links";
 
 interface TerminalProps {
   className?: string
@@ -25,6 +26,8 @@ const CustomTerminal = ({ className, onTerminalInit, children }: TerminalProps) 
         foreground: '#ffffff'
       }
     }
+
+    instance.loadAddon(new WebLinksAddon())
 
     if (!fitAddonRef.current) {
       fitAddonRef.current = new FitAddon()
