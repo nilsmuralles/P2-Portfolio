@@ -5,6 +5,7 @@ import PreviewTerm from '@components/PreviewTerm'
 import { useState } from 'react'
 import NameTerm from '@components/NameTerm'
 import AboutMeTerm from '@components/AboutMeTerm'
+import NeovimTerm from '@components/NeovimTerm'
 
 const Layout = () => {
   const [selectedProyect, setSelectedProyect] = useState(0)
@@ -23,7 +24,7 @@ const Layout = () => {
         className={styles.term5} 
         selectedProject={selectedProyect}
       />
-      <CustomTerminal className={styles.term6}/>
+      <NeovimTerm className={styles.term6} />
     </main>
   )
 }
