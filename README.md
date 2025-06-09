@@ -1,55 +1,40 @@
-# React + TypeScript + Vite
+# Portafolio Personal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este es mi portafolio personal, una aplicación web interactiva que simula un Tiling Window Manager inspirado en Hyprland, donde muestro mis proyectos más destacados, con tecnología y descripciones personalizadas.
 
-Currently, two official plugins are available:
+## ✨ Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🎨 Interfaz de terminal personalizada con `xterm.js`.
+- 🖼️ Vista previa de proyectos con imágenes que aparecen sobre la terminal.
+- 💻 Proyectos con descripción, tecnologías y enlaces directos.
+- ⚡ Animaciones fluidas y diseño minimalista.
 
-## Expanding the ESLint configuration
+## 🚀 Tecnologías
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React** (con `react-xtermjs` para la terminal)
+- **xterm.js** y sus addons (`fit`, `web-links`)
+- **Vite** para la construcción
+- **Bun** para manejo de paquetes
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 📸 Screenshots
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Aquí puedes ver cómo luce la aplicación:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+| Pantalla principal | Proyecto seleccionado | Vista previa con imagen |
+|--------------------|-----------------------|--------------------------|
+| ![Home](./screenshots/home.png) | ![Lista](./screenshots/list.png) | ![Preview](./screenshots/preview.png) |
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
-# P2-Portfolio
+⚠️ **Recuerda:** Para que los screenshots se vean, debes tenerlos en una carpeta llamada `screenshots` en la raíz del proyecto.
+
+## 📦 Instalación
+
+```bash
+# Clona el repo
+git clone https://github.com/nilsmuralles/P2-Portfolio
+cd P2-Portfolio
+
+# Instala dependencias
+bun install
+
+# Inicia el servidor de desarrollo
+bun run dev
