@@ -2,6 +2,7 @@ import CustomTerminal from "@components/Terminal"
 import useProyectList from "@hooks/useProyectList"
 import type { Terminal } from "@xterm/xterm"
 import { useEffect, useRef } from "react"
+import styles from "./PreviewTerm.module.css"
 
 interface PreviewTermProps {
   className: string
@@ -27,19 +28,9 @@ const PreviewTerm = ({className, selectedProject}: PreviewTermProps) => {
   return (
     <CustomTerminal className={className} onTerminalInit={handleTermInit}>
       <img 
+        className={styles.terminalimg}
         src={selected.imageURL}
         alt={selected.title}
-        style={{
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
-          maxWidth: "80%",
-          borderRadius: "4px",
-          boxShadow: "0 0 10px rgba(0,0,0,0.5)",
-          pointerEvents: "none", 
-          scale: "0.7",
-        }}
       />
     </CustomTerminal>
   )

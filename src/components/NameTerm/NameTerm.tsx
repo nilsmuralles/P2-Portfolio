@@ -9,6 +9,7 @@ const NameTerm = ({className}: NameTermProps) => {
 
   const handleTermInit = (term: Terminal) => {
     term.clear()
+    term.writeln("> whoami")
     term.writeln("\x1b[0;38;2;245;66;1380;49m    ▗▖ ▗▖▗▄▄▄▖▗▖   ▗▖    ▗▄▖     ▗▄▄▄▖▗▖  ▗▖")
     term.writeln("    ▐▌ ▐▌▐▌   ▐▌   ▐▌   ▐▌ ▐▌      █  ▐▛▚▞▜▌")
     term.writeln("    ▐▛▀▜▌▐▛▀▀▘▐▌   ▐▌   ▐▌ ▐▌      █  ▐▌  ▐▌")
