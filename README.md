@@ -20,11 +20,9 @@ Este es mi portafolio personal, una aplicación web interactiva que simula un Ti
 
 Aquí puedes ver cómo luce la aplicación:
 
-| Pantalla principal | Proyecto seleccionado | Vista previa con imagen |
-|--------------------|-----------------------|--------------------------|
-| ![Home](./screenshots/home.png) | ![Lista](./screenshots/list.png) | ![Preview](./screenshots/preview.png) |
+![Home](./public/images/demo-1.png) 
 
-⚠️ **Recuerda:** Para que los screenshots se vean, debes tenerlos en una carpeta llamada `screenshots` en la raíz del proyecto.
+![Project](./public/images/demo-2.png) 
 
 ## 📦 Instalación
 
