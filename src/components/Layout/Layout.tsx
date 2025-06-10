@@ -1,4 +1,3 @@
-import CustomTerminal from '@components/Terminal'
 import styles from './Layout.module.css'
 import ProyectsTerm from '@components/ProyectsTerm'
 import PreviewTerm from '@components/PreviewTerm'
